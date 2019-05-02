@@ -6,5 +6,16 @@
 # Time complexity: ?
 # Space complexity: ?
 def matrix_check_sum(matrix)
-  raise NotImplementedError
+
+  matrix.length.times do |i|
+    sum = 0
+    row_sum = matrix[i].sum
+
+    matrix.length.times do |j|
+      sum += matrix[j][i]
+    end
+    return false if row_sum != sum
+  end
+
+  return true
 end
